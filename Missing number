@@ -1,0 +1,12 @@
+   def missingNumber(self, nums):
+        n = len(nums)
+        s = 0
+        sum = (n*(n+1))/2
+        for i in range(0,n):
+            s = s + nums[i]
+        m = sum - s
+        return m
+
+Example 1:
+Input: nums = [3,0,1]
+Output: 2
