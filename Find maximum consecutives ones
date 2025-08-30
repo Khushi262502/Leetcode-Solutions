@@ -1,0 +1,18 @@
+class Solution(object):
+    def findMaxConsecutiveOnes(self, nums):
+        maxi =0
+        count =0
+        n = len(nums)
+        for i in range (n):
+            if(nums[i]==1):
+                count = count+1
+                maxi = max(maxi,count)
+            else
+                count = 0
+        return maxi
+
+Input: nums = [1,1,0,1,1,1]
+Output: 3
+Explanation: The first two digits or the last three digits are consecutive 1s. The maximum number of consecutive 1s is 3.        
+
+        
