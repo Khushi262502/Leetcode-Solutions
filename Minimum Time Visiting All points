@@ -1,0 +1,11 @@
+class Solution(object):
+    def minTimeToVisitAllPoints(self, points):
+        
+        sum = 0
+        for i in range(1,len(points)):
+            x1,y1 = points[i-1]
+            x2,y2 = points[i]
+
+            minimum = max(abs(x2-x1),abs(y2-y1))
+            sum +=minimum
+        return sum
