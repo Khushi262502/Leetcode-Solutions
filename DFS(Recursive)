@@ -1,0 +1,17 @@
+from typing import List
+
+class Solution:
+    def dfsOfGraph(self, V: int, adj: List[List[int]]) -> List[int]:
+        visited = [False] * V
+        result = []
+
+        def dfs(node):
+            visited[node] = True
+            result.append(node)
+
+            for neighbor in adj[node]:
+                if not visited[neighbor]:
+                    dfs(neighbor)
+
+        dfs(0)  
+        return result
