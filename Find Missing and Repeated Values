@@ -1,0 +1,24 @@
+class Solution(object):
+    def findMissingAndRepeatedValues(self, grid):
+        
+        n = len(grid)
+        expectedsum = 0
+        actualsum = 0
+        expected_sq_sum = 0
+        actual_sq_sum = 0
+        N = n*n
+        s = 0
+        p = 0
+        for i in range(n):
+            for j in range(n):
+                actualsum += grid[i][j]
+                actual_sq_sum += grid[i][j]*grid[i][j]
+                
+        expectedsum = (N * (N + 1)) // 2
+        expected_sq_sum = (N * (N + 1) * (2 * N + 1)) // 6
+        s = (actual_sq_sum - expected_sq_sum)/(actualsum - expectedsum)
+        p = (actualsum - expectedsum)
+        a = (s+p)/2
+        b = s-a
+        return [a,b]
+        
