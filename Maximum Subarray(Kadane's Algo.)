@@ -1,0 +1,11 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        n = len(nums)
+        currsum = 0
+        maxsum = float('-inf')
+        for i in range(n):
+            currsum += nums[i]
+            maxsum = max(currsum , maxsum)
+            if currsum < 0:
+                currsum = 0
+        return maxsum
